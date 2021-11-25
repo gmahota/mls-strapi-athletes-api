@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customers",
+  "info": {
+    "name": "Customers",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "richtext"
+    },
+    "vat": {
+      "type": "string"
+    },
+    "cellphone1": {
+      "type": "string"
+    },
+    "cellphone2": {
+      "type": "string"
+    },
+    "numberIdentification": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "decimal"
+    },
+    "longitude": {
+      "type": "decimal"
+    },
+    "sales_point": {
+      "model": "sales-point",
+      "via": "customers"
+    },
+    "invoices": {
+      "via": "customer",
+      "collection": "invoice"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pedding",
+        "cancel",
+        "close"
+      ]
+    },
+    "statements": {
+      "via": "customer",
+      "collection": "statement"
+    }
+  }
+}

@@ -1,1 +1,1 @@
-# mls-strapi-athletes-api
+# Mls-strapi-Athletes-api

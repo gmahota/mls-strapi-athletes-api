@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "statement",
+  "info": {
+    "name": "Statement",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "debit",
+        "credit"
+      ]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pedding",
+        "cancel",
+        "closed"
+      ]
+    },
+    "invoice": {
+      "model": "invoice"
+    },
+    "customer": {
+      "model": "customers",
+      "via": "statements"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "amount": {
+      "type": "decimal"
+    }
+  }
+}
