@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/customers": {
+    "/athletes": {
       "get": {
         "deprecated": false,
-        "description": "Find all the customers's records",
+        "description": "Find all the athletes's records",
         "responses": {
           "200": {
-            "description": "Retrieve customers document(s)",
+            "description": "Retrieve athletes document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Customers"
+                    "$ref": "#/components/schemas/Athletes"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Customers"
+          "Athletes"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new customers record",
+        "description": "Create a new athletes record",
         "responses": {
           "200": {
-            "description": "Retrieve customers document(s)",
+            "description": "Retrieve athletes document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Customers"
+                  "$ref": "#/components/schemas/Athletes"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Customers"
+          "Athletes"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCustomers"
+                "$ref": "#/components/schemas/NewAthletes"
               }
             }
           }
         }
       }
     },
-    "/customers/count": {
+    "/athletes/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the number of customers documents",
+        "description": "Retrieve the number of athletes documents",
         "responses": {
           "200": {
-            "description": "Retrieve customers document(s)",
+            "description": "Retrieve athletes document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Customers"
+          "Athletes"
         ],
         "parameters": []
       }
     },
-    "/customers/{id}": {
+    "/athletes/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one customers record",
+        "description": "Find one athletes record",
         "responses": {
           "200": {
-            "description": "Retrieve customers document(s)",
+            "description": "Retrieve athletes document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Customers"
+                  "$ref": "#/components/schemas/Athletes"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Customers"
+          "Athletes"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single customers record",
+        "description": "Update a single athletes record",
         "responses": {
           "200": {
-            "description": "Retrieve customers document(s)",
+            "description": "Retrieve athletes document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Customers"
+                  "$ref": "#/components/schemas/Athletes"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Customers"
+          "Athletes"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCustomers"
+                "$ref": "#/components/schemas/NewAthletes"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single customers record",
+        "description": "Delete a single athletes record",
         "responses": {
           "200": {
-            "description": "deletes a single customers based on the ID supplied",
+            "description": "deletes a single athletes based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Customers"
+          "Athletes"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Customers": {
+      "Athletes": {
         "required": [
           "id"
         ],
@@ -525,34 +525,8 @@
           "name": {
             "type": "string"
           },
-          "address": {
+          "strava_id": {
             "type": "string"
-          },
-          "vat": {
-            "type": "string"
-          },
-          "cellphone1": {
-            "type": "string"
-          },
-          "cellphone2": {
-            "type": "string"
-          },
-          "numberIdentification": {
-            "type": "string"
-          },
-          "latitude": {
-            "type": "number"
-          },
-          "longitude": {
-            "type": "number"
-          },
-          "status": {
-            "type": "string",
-            "enum": [
-              "pedding",
-              "cancel",
-              "close"
-            ]
           },
           "published_at": {
             "type": "string",
@@ -560,39 +534,13 @@
           }
         }
       },
-      "NewCustomers": {
+      "NewAthletes": {
         "properties": {
           "name": {
             "type": "string"
           },
-          "address": {
+          "strava_id": {
             "type": "string"
-          },
-          "vat": {
-            "type": "string"
-          },
-          "cellphone1": {
-            "type": "string"
-          },
-          "cellphone2": {
-            "type": "string"
-          },
-          "numberIdentification": {
-            "type": "string"
-          },
-          "latitude": {
-            "type": "number"
-          },
-          "longitude": {
-            "type": "number"
-          },
-          "status": {
-            "type": "string",
-            "enum": [
-              "pedding",
-              "cancel",
-              "close"
-            ]
           },
           "published_at": {
             "type": "string",
@@ -610,7 +558,7 @@
   },
   "tags": [
     {
-      "name": "Customers"
+      "name": "Athletes"
     }
   ]
 }

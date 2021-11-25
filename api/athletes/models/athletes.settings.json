@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "athletes",
+  "info": {
+    "name": "Athletes"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "strava_id": {
+      "type": "string"
+    }
+  }
+}

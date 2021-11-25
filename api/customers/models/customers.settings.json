@@ -36,14 +36,6 @@
     "longitude": {
       "type": "decimal"
     },
-    "sales_point": {
-      "model": "sales-point",
-      "via": "customers"
-    },
-    "invoices": {
-      "via": "customer",
-      "collection": "invoice"
-    },
     "status": {
       "type": "enumeration",
       "enum": [
@@ -51,10 +43,6 @@
         "cancel",
         "close"
       ]
-    },
-    "statements": {
-      "via": "customer",
-      "collection": "statement"
     }
   }
 }
